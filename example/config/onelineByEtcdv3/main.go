@@ -23,7 +23,7 @@ import (
 	"github.com/douyu/jupiter/pkg/xlog"
 )
 
-//  go run main.go --config=etcdv3://10.0.101.68:2379?key=test
+//  go run main.go --config=etcdv3://192.168.174.149:2379?key=test
 
 var configText = `
 [people]
@@ -39,7 +39,7 @@ var configText = `
 
 func initTestData() {
 	etcdCfg := clientv3.Config{
-		Endpoints: []string{"127.0.0.1:2379"},
+		Endpoints: []string{"192.168.174.149:2379"},
 	}
 	cli, _ := clientv3.New(etcdCfg)
 	cli.Put(context.Background(), "test", configText)
