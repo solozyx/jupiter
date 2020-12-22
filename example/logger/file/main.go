@@ -44,7 +44,8 @@ func NewEngine() *Engine {
 }
 
 func (s *Engine) printLogger() error {
-	xlog.DefaultLogger = xlog.StdConfig("default").Build()
+	// xlog.DefaultLogger = xlog.StdConfig("default").Build()
+	xlog.DefaultLogger = xlog.StdConfig("jupiter").Build()
 	go func() {
 		for {
 			xlog.Info("logger info", xlog.String("gopher", "jupiter"), xlog.String("type", "file"))
